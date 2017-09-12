@@ -1,0 +1,7 @@
+<rt-import name="popupTypes" from="dal/ui/popups"/>
+<rt-import name="View" from="ui/view"/>
+<rt-import name="TaskPopup" from="popups/task-popup" />
+
+<View>
+     <TaskPopup rt-if="this.props.activePopup.type == popupTypes.TASK_POPUP" />
+</View>

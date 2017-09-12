@@ -1,0 +1,66 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 400px;
+  background-color: aqua;
+}
+
+.header{
+  flex: 1;
+  width: 100%;
+  background-color: grey;
+
+  i {
+    float: right;
+    margin: 0 20px 0 0;
+    font-family: Arial, Serif;
+  }
+}
+
+.content{
+  flex: 10;
+  background-color: aliceblue;
+}
+
+.ratingButtonsGroup{
+  display: flex;
+  flex-direction: row;
+}
+
+.ratingButtonsBox{
+   flex: 1;
+}
+
+.ratingButton{
+  flex: 1
+}
+
+.textareaBox{
+
+}
+
+.footer{
+  width: 100%;
+  flex: 1;
+  background-color: grey;
+}
+
+.selected{
+  background-color:dimgrey;
+}
+
+
+.inactive{
+  background-color: gray;
+}
+
+span {
+  display: block;
+  margin: 20px 0 0 0;
+}
+
+textarea {
+  width: 95%;
+  height: 200px;
+}

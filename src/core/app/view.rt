@@ -1,0 +1,9 @@
+<rt-import name="Provider" from="react-redux" />
+<rt-import name="store" from="dal/store" />
+<rt-import name="PopupManager" from="core/popup-manager" />
+
+<Provider store={store}>
+
+    <PopupManager />
+
+</Provider>

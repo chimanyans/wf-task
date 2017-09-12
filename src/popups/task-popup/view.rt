@@ -1,0 +1,60 @@
+<rt-import name="View" from="ui/view" />
+<rt-import name="Button" from="ui/button" />
+<rt-import name="Tooltip" from="ui/tooltip" />
+
+<View class="container">
+
+    <View class="header">
+        Help​ ​Us​ ​make​ ​Workfront​ ​Better
+
+        <i class="close" onClick={this.close.bind(this)}>x</i>
+    </View>
+
+    <View class="content">
+        <span>How likely are you recommend AtTask to a colleague or friend?</span>
+        <View class="ratingButtonsGroup">
+            <View rt-repeat="item in this.ratingButtons"
+                    class="ratingButtonsBox">
+
+                <Tooltip show={this.showTooltip(item)}
+                         text={this.state.tooltipText}
+                />
+
+                <Button class="ratingButton"
+                        rt-class="{ratingButton: true, selected: this.state.selected && item.value == this.state.selected.value}"
+                        style="color:{item.color}"
+                        key={item.value}
+                        onMouseOver={this.ratingButtonMouseOver.bind(this,item)}
+                        onMouseOut={this.ratingButtonMouseOut.bind(this)}
+                        onClick={this.ratingButtonClick.bind(this,item)}>
+                    {item.value}
+                </Button>
+
+            </View>
+        </View>
+
+        <View class="textareaBox">
+            <span>Anything you'd like to share with us?</span>
+
+            <textarea class=""  ref="textarea"/>
+        </View>
+
+    </View>
+
+    <View class="footer">
+        <Button rt-if="!this.state.isDone"
+                rt-class="{inactive: !this.state.selected}"
+                onClick={this.doneButtonClick.bind(this)}>
+            Done
+        </Button>
+
+        <Button rt-if="this.state.isDone">
+            Thanks !
+        </Button>
+
+        <Button onClick={this.close.bind(this)}>
+            Go Away
+        </Button>
+    </View>
+
+</View>
